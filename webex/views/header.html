@@ -1,0 +1,79 @@
+<style>
+    .navbar {
+        border-top-style: solid;
+        font-size: 18px;
+        padding-top: 0px;
+        padding-right: 5px;
+        min-height: 0px;
+        margin-bottom: 0px;
+
+    }
+    
+    .img-responsive {
+        height: 30px;
+        width: 260px;
+    }
+
+    .img-responsive:hover {
+        cursor: pointer;
+    }
+
+    .pad {
+        padding-top: 0px;
+        font-weight: bold;
+    }
+
+    .ho {
+        color: rgb(128, 128, 128);
+        font-weight: bold;
+    }
+
+    .ho:hover {
+        cursor: pointer;
+        color: rgb(19, 19, 19);
+    }
+
+    .po p {
+        margin-left: 20px;
+        padding-top: 20px;
+    }
+</style>
+
+<div class="container-fluid">
+    <div class="row">
+        <div class="navbar navbar-default" data-spy="affix" id="navbar">
+            <div class="col-md-9">
+                <ul class="nav navbar-nav navbar-left">
+                    <li><a ng-href="#!/home"><img class="img-responsive" src="images/Logo.jpg" alt="logo"></a></li>
+                </ul>
+            </div>
+            <div class="col-md-3">
+                <ul class="po nav navbar-nav navbar-left">
+                    <li><p>{{ message }}<small>{{ username}}</small></p></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="po container-fluid">
+    <div class="row">
+        <div class="navbar navbar-default">
+            <div class="navbar-header">
+                <button type="button" class="pull-left navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+            </div>
+            <div class="collapse navbar-collapse">
+                <ul class="pad nav navbar-nav navbar-right">
+                    <li><a ng-href="#!/gallery"><!-- <span class="glyphicon glyphicon-home"></span>-->Gallery</a></li>
+                    <li><a ng-href="#!/services"><!-- <span class="glyphicon glyphicon-log-in"></span>-->Services</a></li>
+                    <li><a ng-href="#!/about"><!-- <span class="glyphicon glyphicon-log-out"></span>-->About</a></li>
+                    <li><a ng-href="#!/contact"><!-- <span class="glyphicon glyphicon-phone"></span>-->Contact</a></li>
+                    <li><a class="ho" ng-click="logout()"><!--<span class="glyphicon glyphicon-log-out"></span>-->Log Out</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>

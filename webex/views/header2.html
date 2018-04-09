@@ -1,0 +1,68 @@
+<style>
+    .navbar {
+    border-top-style: solid;
+    font-size: 18px;
+    padding-top: 0px;
+    padding-right: 5px;
+
+    }
+    .img-responsive{
+    height: 50px;
+    width: 300px;
+    }
+    .img-responsive:hover{
+    cursor: pointer;
+    }
+    .pad{
+        padding-top: 35px;
+        font-weight: bold;
+    }
+    ol{
+        padding-top: 5px;
+    }
+    .ho{
+        color: rgb(128, 128, 128);
+        font-weight: bold;
+    }
+    .ho:hover{
+        cursor: pointer;
+        color: rgb(19, 19, 19);
+    }
+    .row{
+        padding: 0px;
+    }
+
+</style>
+
+<div class="container-fluid">
+    <div class="row">
+        <nav class="navbar navbar-default">
+            <div class="col-xs-3">
+                <ul class="nav navbar-nav navbar-left">
+                    <li><a ng-href="#!/home"><img class="img-responsive" src="images/Logo.jpg" alt="logo"></a></li>
+                </ul>
+            </div>
+            <div class="navbar-header">
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                      <span class="icon-bar"></span>
+                      <span class="icon-bar"></span>
+                      <span class="icon-bar"></span>
+                    </button>
+            </div>
+            <div class="col-xs-6">
+                <ul class="pad nav navbar-nav navbar-right">
+                    <li><a ng-href="#!/gallery"><!-- <span class="glyphicon glyphicon-home"></span>--> Gallery</a>
+                    <li><a ng-href="#!/services"><!-- <span class="glyphicon glyphicon-log-in"></span>--> Services</a>
+                    <li><a ng-href="#!/about"><!-- <span class="glyphicon glyphicon-log-out"></span>--> About</a>
+                    <li><a ng-href="#!/contact"><!-- <span class="glyphicon glyphicon-phone"></span>--> Contact</a></li>
+                </ul>
+            </div>
+            <div class="col-xs-3">
+                <ul class="nav navbar-nav navbar-right">
+                    <ol><p>{{ message }}<small>{{ username}}</small></p></ol>
+                    <ol class="ho" ng-click="logout()"><span class="glyphicon glyphicon-log-out"></span> Log Out</ol>
+                </ul>                
+            </div>
+        </nav>
+    </div>
+</div>

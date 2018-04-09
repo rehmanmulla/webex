@@ -1,0 +1,119 @@
+<style>
+    body {
+        font-size: 12px;
+        background: #eaeaea;
+    }
+
+    .jumbotron {
+        background: rgb(36, 36, 36);
+        color: #FFF;
+        border-radius: 0px;
+    }
+
+    .jumbotron-sm {
+        padding-top: 16px;
+        padding-bottom: 20px;
+    }
+
+    .jumbotron small {
+        color: #FFF;
+    }
+
+    .h1 small {
+        font-size: 24px;
+    }
+</style>
+
+<header ng-include="'/views/header.html'"></header>
+<div class="jumbotron jumbotron-sm">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-12 col-lg-12">
+                <h1 class="h1">
+                    Contact us
+                    <small>Feel free to contact us</small>
+                </h1>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-xs-5 col-xs-offset-4">
+        <p class="message" ng-show="message">{{ fd }}</p>
+    </div>
+</div>
+
+<div class="container" id="ct">
+    <div class="row">
+        <div class="col-md-8">
+            <div class="well well-sm">
+                <form name="myform" ng-submit="contact()">
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <label for="name"> Name</label>
+                                <div class="input-group">
+                                    <span class="input-group-addon">
+                                        <span class="glyphicon glyphicon-user"></span>
+                                    </span>
+                                    <input type="text" class="form-control" name="fname"id="fname" placeholder="Enter name" ng-model="feedback.fname" ng-required="true"/>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="email">Email Address</label>
+                                <div class="input-group">
+                                    <span class="input-group-addon">
+                                        <span class="glyphicon glyphicon-envelope"></span>
+                                    </span>
+                                    <input type="email" class="form-control" name="email" id="email" placeholder="Enter email" ng-model="feedback.email" ng-required="true" />
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="subject">
+                                    Subject</label>
+                                <select id="subject" name="subject" class="form-control" required="required">
+                                    <option value="na" selected="">Choose One:</option>
+                                    <option value="service">General Customer Service</option>
+                                    <option value="suggestions">Suggestions</option>
+                                    <option value="product">Product Support</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <label for="name">
+                                    Message</label>
+                                <textarea name="message" id="message" class="form-control" rows="7" cols="25" placeholder="Message" ng-model="feedback.message" ng-required="true"></textarea>
+                            </div>
+                        </div>
+                        <div class="col-md-12">
+                            <button type="submit" class="btn btn-primary pull-right" id="btnContactUs">
+                                Send Message</button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <form>
+                <legend>
+                    <span class="glyphicon glyphicon-globe"></span> Our office</legend>
+                <address>
+                    <strong>Al-mareid, Pvt ltd.</strong>
+                    <br> 795 Folsom Eve, Le-Rosa 600
+                    <br> Salaulim, GA 403
+                    <br>
+                    <abbr title="Phone">
+                        Ph:</abbr>
+                    (0832) 231-0000
+                </address>
+                <address>
+                    <strong>Full Name</strong>
+                    <br>
+                    <a href="mailto:#">abc@example.com</a>
+                </address>
+            </form>
+        </div>
+    </div>
+</div>

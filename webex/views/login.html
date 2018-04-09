@@ -1,0 +1,228 @@
+<style>
+    body {
+        padding-top: 50px;
+    }
+    .img-responsive {
+        height: 50px;
+        width: 300px;
+    }
+
+    form {
+        padding-top: 80px;
+    }
+    input[type=text],
+    input[type=password],
+    input[type=email] {
+        background-color: transparent;
+        border: none;
+        border-bottom: 1px solid #72d6f5;
+        border-radius: 0;
+        width: 100%;
+        margin: 0px;
+        padding: 0;
+        box-shadow: none;
+    }
+    input[type=text]:focus,
+    input[type=password]:focus,
+    input[type=email]:focus {
+        box-shadow: none;
+        border-bottom: 1px solid #6eafc4;
+    }
+
+    input[type="submit"].login{
+        float:right;
+        width: 160px;
+        height: 40px;
+        -moz-border-radius: 19px;
+        -webkit-border-radius: 19px;
+        border-radius: 19px;
+        -moz-background-clip: padding;
+        -webkit-background-clip: padding-box;
+        background-clip: padding-box;
+        background-color: #55b1df;
+        border:1px solid #55b1df;
+        border:none;
+        color: #fff;
+        font-weight: bold;
+    }
+    input[type="submit"].login:hover{background-color: #fff; border:1px solid #55b1df; color:#55b1df; cursor:pointer;}
+    input[type="submit"].login:focus{outline: none;}
+    input{transition: all .2s ease;}
+    input.form-style{
+	color:#8a8a8a;
+	display: block;
+	width: 90%;
+	height: 44px;
+	padding: 5px 5%;
+	border:1px solid #ccc;
+	-moz-border-radius: 27px;
+	-webkit-border-radius: 27px;
+	border-radius: 27px;
+	-moz-background-clip: padding;
+	-webkit-background-clip: padding-box;
+	background-clip: padding-box;
+	background-color: #fff;
+	font-family:'HelveticaNeue','Arial', sans-serif;
+	font-size: 105%;
+	letter-spacing: .8px;
+}
+
+    .v-divider{
+        margin-top: 70px;
+        margin-left:30px;
+        margin-right:5px;
+        width:1px;
+        height:250px;
+        border-left:1px solid gray;
+    }
+    /* linked in css */
+    .linkedin_bgcolor
+    {
+        background: #385899;
+        margin: 0px;
+    }
+
+    .linkedin_bgcolor a
+    {
+        border:1px solid #385899;
+        text-align: left;
+        color: #fff;
+        text-decoration: none;
+    }
+    .linkedin_bgcolor a i
+    {
+        background: #ffffff;
+        padding: 20px;
+        color: #385899;
+        height: 50px;
+        width: 50px;
+    }
+    /* google plus */
+    .googleplus_bgcolor
+    {
+        background: #de4936;
+        margin: 0px 0px 0px 0px;
+    }
+    .googleplus_bgcolor a
+    {
+        border:1px solid #de4936;
+        text-align: left;
+        color: #fff;
+        text-decoration: none;
+    }
+    .googleplus_bgcolor a i
+    {
+        background: #ffffff;
+        padding: 20px;
+        color: #b72b19;
+        height: 50px;
+        width: 50px;
+    }
+    #social-login
+    {
+        margin-bottom: -2px;
+    }
+
+    input.ng-touched.ng-invalid {
+        border-bottom: solid 1px rgb(223, 136, 86);
+    }  
+    input.ng-touched.ng-valid {
+        border-bottom: solid 1px green;
+    }
+    .fb{
+        padding-left:20px;
+        font-family: 'Segoe UI';
+        font-size: 18px; 
+    }
+    .g_plus{
+        padding-left:20px;
+        font-family: 'Segoe UI';
+        font-size: 18px; 
+    }
+    .po h1,h4 {
+        margin-left: 20px
+    }
+</style>
+
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-md-5">
+            <img class="img-responsive" src="images/Logo.jpg" alt="logo">
+        </div>
+        <div class="col-md-6">
+            <ul class="po nav navbar-nav navbar-left">
+                <h1>Log In</h1>
+                <h4> New to Webex?
+                    <a ng-href="#!/register">Sign Up</a>
+                </h4>
+            </ul>
+        </div>
+        <div class="col-md-1">
+            <ul class="nav navbar-nav navbar-left">
+                <!-- <a ng-href="#!/home">
+                    <span class="glyphicon glyphicon-remove" style="font-size:30px;color:rgb(43, 43, 43);"></span>
+                </a> -->
+            </ul>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-md-4 col-xs-offset-5">
+            <p class="message" ng-show="message">{{ message }}</p>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-md-offset-2">           
+            <div class="col-md-5">
+                <form role="form" name="userform" ng-submit="login()" novalidate>
+                    <div class="form-group">
+                        <label>Email</label>                  
+                        <input type="email" name="email" id="email" class="form-control" placeholder="" ng-model="user.email" ng-required="true">
+                        <small ng-show="userform.email.$touched && userform.email.$invalid">
+                            <p style="display: block; color: rgb(221, 30, 30)">Please enter valid email</p>
+                        </small>
+                    </div>
+                    <div class="form-group">
+                        <label>Password</label>                    
+                        <input type="password" name="password" id="password" class="form-control" placeholder="" ng-model="user.password" ng-required="true">
+                        <small ng-show="userform.password.$touched && userform.password.$invalid">
+                            <p style="display: block; color: rgb(221, 30, 30)">Please enter valid Password</p>
+                        </small>
+                    </div>
+                    <div class="form-group">
+                            <div class="checkbox pull-left">
+                                    <label>
+                                        <input type="checkbox"><small>Remember me</small></label>
+                                </div>
+                        <p class="pull-right"><a href=""><small>Forgot Password?</small></a></p>
+                    </div><br><br>
+                    <div class="form-group">
+                        <input type="submit" class="login pull-left" value="Log In">
+                        <!-- <div class="clear-fix"></div> -->
+                    </div>            
+                </form>
+            </div>
+        </div>
+        
+        <div class="hidden-xs col-md-1 v-divider"></div>
+
+        <div class="col-md-3"><br><br><br><br><br><br><br>
+            <div id="social-login">
+                <p class="linkedin_bgcolor">
+                    <a class="btn-block">
+                    <i class="fa fa-lg fa-facebook"></i><span class="fb"> Sign in with facebook</span></a>
+                </p><br>
+                 <p class="googleplus_bgcolor">
+                    <a class="btn-block">
+                    <i class="fa fa-lg fa-google-plus"></i><span class="g_plus"> Sign in with Google</span></a>
+                </p>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-4 col-md-offset-4"><br><br>
+            <h5>*By logging in, you agree to our <a href="">Terms of Use, Privacy Policy</a> and to receive Webex emails, newsletters & updates.</h5>
+            
+    </div>
+</div>

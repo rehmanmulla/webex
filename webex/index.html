@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="MyApp">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Webex</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap.min.css">
+    <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="http://cdn.bootcss.com/animate.css/3.5.1/animate.min.css">
+    <link rel="shortcut icon" href="images/Logo1.png" type="image/png">
+</head>
+<body>
+        <main ng-view></main><br><br>
+        <footer ng-include="'/views/footer.html'"></footer>
+
+    <script src="https://www.gstatic.com/firebasejs/4.10.1/firebase.js"></script>
+    <script>
+    // Initialize Firebase
+    var config = {
+        apiKey: "AIzaSyDTmqAU1dMs_ICZtossbuswgAax1_4QQLw",
+        authDomain: "webex-9568.firebaseapp.com",
+        databaseURL: "https://webex-9568.firebaseio.com",
+        projectId: "webex-9568",
+        storageBucket: "",
+        messagingSenderId: "475729624772"
+    };
+    firebase.initializeApp(config);
+    </script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+    <script src="https://code.angularjs.org/1.6.9/angular-route.min.js"></script>
+    <script src="controller/webex.js"></script>
+    <script src="controller/registerCtr.js"></script>
+    <script src="controller/successCtr.js"></script>
+    <!-- <script src="controller/contactCtr.js"></script> -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angularFire/2.3.0/angularfire.min.js"></script>
+</body>
+</html>
